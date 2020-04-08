@@ -7,11 +7,10 @@ const postRouter = require("./posts/postRouter.js");
 
 const userDb = require("./users/userDb"); 
 
-server.use(logger); 
-server.use("/users", userRouter); 
-server.use("/posts", postRouter); 
-
 server.use(express.json());
+server.use(logger); 
+server.use("/api/user", userRouter); 
+server.use("/api/posts", postRouter); 
 
 //custom middleware
 
